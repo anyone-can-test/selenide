@@ -63,8 +63,10 @@ public class SelenideProxyServer {
     addResponseFilter("responseSizeWatchdog", new ResponseSizeWatchdog());
     addResponseFilter("download", new FileDownloadFilter());
 
-    proxy.start();
+    proxy.start(7740);
     port = proxy.getPort();
+    System.out.println("proxy is starting... " + port);
+    
   }
 
   private void addRequestFilter(String name, RequestFilter requestFilter) {
